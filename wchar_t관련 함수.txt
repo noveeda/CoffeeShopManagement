@@ -1,0 +1,23 @@
+파일 열기
+_wfopen(L"menu.txt", L"rt, ccs=UTF-8");
+
+파일 쓰기(전체 삭제 후 쓰기)
+_wfopen(L"menu.txt", L"wt, ccs=UTF-8");
+
+파일 전체 읽기
+fgetws(line, sizeof(line) / sizeof(wchar_t), fp) != NULL
+
+읽어온 wchar_t 읽기
+swscanf(line, L"%d,%[^,],%d\n", &id, menuName, &price);
+
+wchar_t가 포함된 데이터 쓰기
+wprintf(L"%d, %ls, %d\n", id, menuName, price);
+
+wchar_t 타입에 데이터 복붙하기
+wcscpy(dest, src);
+
+wchar_t용 sscanf
+swscanf(const wchar_t* buffer, const wchar_t format, ...);
+
+
+전북특별자치도 군산시 미룡동 558
