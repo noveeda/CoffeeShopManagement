@@ -50,4 +50,8 @@
       <Filter>리소스 파일</Filter>
     </Text>
   </ItemGroup>
+  <ItemGroup>
+    <None Include=".editorconfig" />
+    <None Include=".gitignore" />
+  </ItemGroup>
 </Project>

@@ -1,6 +1,6 @@
 ﻿#include "main.h"
 
-// 메뉴 리스트의 헤드 포인터
+// 메뉴 z`리스트의 헤드 포인터
 menuItem* menuItemList;
 
 void mainMenu() {
