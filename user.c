@@ -2,9 +2,12 @@
 
 /*
 * TODO:
+*	로그인 페이지
+*	회원가입 페이지
 *	로그인 판별 로직
+*	회원가입 로직
 *	아이디 중복 여부 검사
-*	유저id AUTO_INCREMENT 유지
+*	유저id AUTO_INCREMENT 유지 v
 *   
 */
 
@@ -29,7 +32,8 @@ void showLogin() {
 
 void showSignUp() {
 	int userId;
-	wchar_t email[100], password[100], phoneNumber[28], address[60];
+	wchar_t email[100], password[100], phoneNumber[28], address[60], encryptedPassword[65];
+
 	while (true) {
 		system("cls");
 		printf("\n\t\t\t  회원가입 페이지");
@@ -52,9 +56,10 @@ void showSignUp() {
 	}
 	// userId는 AUTO_INCREMENT로 설정
 	userId = getMaxId() + 1;
+	sha256_wchar(password, encryptedPassword);
 
 	// userList에 삽입
-	insertUserNode(userId, email, password, phoneNumber, address);
+	insertUserNode(userId, email, encryptedPassword, phoneNumber, address);
 	// 테이블에 백업
 	backupUserList();
 }
@@ -65,7 +70,8 @@ userNode* loadUserList() {
 	fp = _wfopen(L"user.csv", L"r, ccs=UTF-8");
 
 	userNode* tmp = userList;
-	wchar_t line[300], email[100], password[100], phoneNumber[28], address[60];
+	wchar_t line[300], email[100], phoneNumber[28], address[60];
+	char password[65];
 	int userId;
 
 	// 에러 발생시 종료
@@ -78,7 +84,7 @@ userNode* loadUserList() {
 
 	// fp가 NULL을 만나기 전까지 line에 파일 안의 문자열을 받는다.
 	while (fgetws(line, sizeof(line) / sizeof(wchar_t), fp) != NULL) {
-		swscanf(line, L"%d,%ls,%ls,%ls,%[^\n]",
+		swscanf(line, L"%d,%ls,%s,%ls,%[^\n]",
 			userId,
 			email, 
 			password,
