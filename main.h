@@ -1,46 +1,46 @@
-// MAIN_H°¡ Á¤ÀÇµÇÁö ¾Ê¾Ò´Ù¸é MAIN_H¸¦ Á¤ÀÇÇÑ´Ù.
+ï»¿// MAIN_Hê°€ ì •ì˜ë˜ì§€ ì•Šì•˜ë‹¤ë©´ MAIN_Hë¥¼ ì •ì˜í•œë‹¤.
 #ifndef MAIN_H
 #define MAIN_H
 #define _CRT_SECURE_NO_WARNINGS
 #define WIDEN2(x) L##x
 #define WIDEN(x) WIDEN2(x)
 
-// ÇÊ¿äÇÑ ¶óÀÌºê·¯¸®¿Í Çì´õÆÄÀÏÀ» Æ÷ÇÔÇÑ´Ù.
+// í•„ìš”í•œ ë¼ì´ë¸ŒëŸ¬ë¦¬ì™€ í—¤ë”íŒŒì¼ì„ í¬í•¨í•œë‹¤.
 #include <windows.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
 #include <malloc.h>
-#include <locale.h> // ÇÑ±¹¾î ·ÎÄÉÀÏ ¼³Á¤
-#include <openssl/sha.h> // SHA-256 Çì´õ
+#include <locale.h> // í•œêµ­ì–´ ë¡œì¼€ì¼ ì„¤ì •
+#include <openssl/sha.h> // SHA-256 í—¤ë”
 #include "data.h"
 
-// ´Ù¸¥ ÆÄÀÏ¿¡¼­ ¼±¾ğµÈ º¯¼ö¸¦ »ç¿ëÇÒ ¼ö ÀÖ°Ô ÇÑ´Ù.
-extern menuItem* menuItemList;	// Ä¿ÇÇ ¸Ş´º ¿¬°á¸®½ºÆ®
-extern orderNode* orderList;	// ÁÖ¹® Á¤º¸ÀÇ ¿¬°á¸®½ºÆ®
+// ë‹¤ë¥¸ íŒŒì¼ì—ì„œ ì„ ì–¸ëœ ë³€ìˆ˜ë¥¼ ì‚¬ìš©í•  ìˆ˜ ìˆê²Œ í•œë‹¤.
+extern menuItem* menuItemList;	// ì»¤í”¼ ë©”ë‰´ ì—°ê²°ë¦¬ìŠ¤íŠ¸
+extern orderNode* orderList;	// ì£¼ë¬¸ ì •ë³´ì˜ ì—°ê²°ë¦¬ìŠ¤íŠ¸
 extern userNode* userList;
 
-// ÇÔ¼ö ¿øÇüÀ» ¼±¾ğÇÑ´Ù.
-int passwordCheck();			// ¾ÏÈ£ Ã¼Å©
-void loadCoffeeMenu();			// Ä¿ÇÇ ¸Ş´º ÀĞ¾î¿À±â
+// í•¨ìˆ˜ ì›í˜•ì„ ì„ ì–¸í•œë‹¤.
+int passwordCheck();			// ì•”í˜¸ ì²´í¬
+void loadCoffeeMenu();			// ì»¤í”¼ ë©”ë‰´ ì½ì–´ì˜¤ê¸°
 void insertCoffeeMenu(int id, const wchar_t* menuName, int price);
-// Ä¿ÇÇ ¸Ş´º¸¦ ¸®½ºÆ®¿¡ Ãß°¡
-int deleteCoffeeMenu();			// Ä¿ÇÇ ¸Ş´º »èÁ¦
-void mainMenu();				// ¸ŞÀÎ ¸Ş´º ¼±ÅÃ°ú Ã³¸®
-void showMainMenu();			// ¸ŞÀÎ ¸Ş´º º¸¿©ÁÖ±â
-void showCoffeeMenuList();		// 1¹ø ¸Ş´º(Ä¿ÇÇ ¸Ş´º º¸±â)
-void showCoffeeMenu();			// menuItemListÀÇ ³»¿ë Ãâ·Â
-int close();					// 0¹ø ¸Ş´º(³¡³»±â)
-void waitZeroInput();			// 0À» ÀÔ·ÂÇÒ ¶§±îÁö ´ë±â
-void showSaleToday();			// ¿À´ÃÀÇ ¸ÅÃâ º¸±â
-void showOrderList();			// 4¹ø ¸Ş´º(ÁÖ¹® ¸ñ·Ï È®ÀÎ)
-void showOrders();				// orderListÀÇ ³»¿ë Ãâ·Â
-void saveMenuFile();			// Ä¿ÇÇ ¸Ş´º¸¦ ÆÄÀÏ¿¡ ÀúÀå
+// ì»¤í”¼ ë©”ë‰´ë¥¼ ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€
+int deleteCoffeeMenu();			// ì»¤í”¼ ë©”ë‰´ ì‚­ì œ
+void mainMenu();				// ë©”ì¸ ë©”ë‰´ ì„ íƒê³¼ ì²˜ë¦¬
+void showMainMenu();			// ë©”ì¸ ë©”ë‰´ ë³´ì—¬ì£¼ê¸°
+void showCoffeeMenuList();		// 1ë²ˆ ë©”ë‰´(ì»¤í”¼ ë©”ë‰´ ë³´ê¸°)
+void showCoffeeMenu();			// menuItemListì˜ ë‚´ìš© ì¶œë ¥
+int close();					// 0ë²ˆ ë©”ë‰´(ëë‚´ê¸°)
+void waitZeroInput();			// 0ì„ ì…ë ¥í•  ë•Œê¹Œì§€ ëŒ€ê¸°
+void showSaleToday();			// ì˜¤ëŠ˜ì˜ ë§¤ì¶œ ë³´ê¸°
+void showOrderList();			// 4ë²ˆ ë©”ë‰´(ì£¼ë¬¸ ëª©ë¡ í™•ì¸)
+void showOrders();				// orderListì˜ ë‚´ìš© ì¶œë ¥
+void saveMenuFile();			// ì»¤í”¼ ë©”ë‰´ë¥¼ íŒŒì¼ì— ì €ì¥
 saleNode* addSales(saleNode* saleToday, orderNode* p);
-// saleToday ¸®½ºÆ®¿¡ Ãß°¡
+// saleToday ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€
 
-// user.c ÇÔ¼ö ¿øÇü
+// user.c í•¨ìˆ˜ ì›í˜•
 void showLogin();
 userNode* loadUserList();
 bool processLogin();

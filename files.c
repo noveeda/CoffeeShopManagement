@@ -1,4 +1,4 @@
-#include "main.h"
+ï»¿#include "main.h"
 
 void saveMenuFile() {
 	FILE* fp;
@@ -7,7 +7,7 @@ void saveMenuFile() {
 	fp = _wfopen(L"menu.txt", L"wt, ccs=UTF-8");
 
 	if (fp == NULL) {
-		printf("Error(saveMenuFile): menu.txt ÆÄÀÏ ¿ÀÇÂ ¿¡·¯!");
+		printf("Error(saveMenuFile): menu.txt íŒŒì¼ ì˜¤í”ˆ ì—ëŸ¬!");
 		return;
 	}
 
@@ -17,8 +17,8 @@ void saveMenuFile() {
 		tmp = tmp->next;
 	}
 
-	fclose(fp);	// ÆÄÀÏ Æ÷ÀÎÅÍ ÇØÁ¦
-	printf("\n\t\t¸Þ´º°¡ ÆÄÀÏ¿¡ ÀúÀåµÇ¾ú½À´Ï´Ù.");
+	fclose(fp);	// íŒŒì¼ í¬ì¸í„° í•´ì œ
+	printf("\n\t\të©”ë‰´ê°€ íŒŒì¼ì— ì €ìž¥ë˜ì—ˆìŠµë‹ˆë‹¤.");
 	Sleep(2000);
 }
 
@@ -29,7 +29,7 @@ void loadTodaySales() {
 	fp = _wfopen(date, L"r, ccs=UTF-8");
 
 	if (fp == NULL) {
-		printf("\n\t\tÀúÀåµÈ ¿À´ÃÀÇ ¸ÅÃâÀÚ·á´Â ¾ø½À´Ï´Ù.\n");
+		printf("\n\t\tì €ìž¥ëœ ì˜¤ëŠ˜ì˜ ë§¤ì¶œìžë£ŒëŠ” ì—†ìŠµë‹ˆë‹¤.\n");
 		waitZeroInput();
 		return;
 	}
@@ -48,13 +48,13 @@ void loadTodaySales() {
 		addOrder(menuId, sales);
 
 	}
-	printf("\n\t\tÆÄÀÏ¿¡ ÀúÀåµÈ %d°Ç, ÃÑ %d¿øÀÇ ¸ÅÃâ ÀÚ·á¸¦ ÀÐ¾î¿Ô½À´Ï´Ù.",
+	printf("\n\t\tíŒŒì¼ì— ì €ìž¥ëœ %dê±´, ì´ %dì›ì˜ ë§¤ì¶œ ìžë£Œë¥¼ ì½ì–´ì™”ìŠµë‹ˆë‹¤.",
 		savedCount, savedTotal);
 	waitZeroInput();
 }
 
 void backup() {
-	saleNode* saleToday = NULL;	// saleNode´Â ¸Þ´ºº°·Î ¸ÅÃâ¾×À» ÀúÀå
+	saleNode* saleToday = NULL;	// saleNodeëŠ” ë©”ë‰´ë³„ë¡œ ë§¤ì¶œì•¡ì„ ì €ìž¥
 	saleNode* p;
 	wchar_t date[40] = WIDEN(__DATE__);
 	orderNode* ptr;
@@ -64,7 +64,7 @@ void backup() {
 	FILE* fp;
 	fp = _wfopen(date, L"w, ccs=UTF-8");
 	if (fp == NULL) {
-		printf("ÆÄÀÏ ¿ÀÇÂ ¿¡·¯\n");
+		printf("íŒŒì¼ ì˜¤í”ˆ ì—ëŸ¬\n");
 		return;
 	}
 
@@ -83,7 +83,7 @@ void backup() {
 	}
 
 	fclose(fp);
-	wprintf("\n\n\t\t\t%ls : ÃÑ¸ÅÃâ = %d", date, totalSaleToday);
+	wprintf("\n\n\t\t\t%ls : ì´ë§¤ì¶œ = %d", date, totalSaleToday);
 	wprintf("\n\n\t\t\tBackup Successful...");
 	waitZeroInput();
 }
@@ -93,14 +93,14 @@ void backupUserList() {
 
 	FILE* fp;
 
-	// ¿­°í
+	// ì—´ê³ 
 	fp = _wfopen(L"user.csv", L"w, ccs=UTF-8");
 	if (fp == NULL) {
-		printf("Error(backupUserList): ÆÄÀÏ ¿ÀÇÂ ¿¡·¯\n");
+		printf("Error(backupUserList): íŒŒì¼ ì˜¤í”ˆ ì—ëŸ¬\n");
 		return;
 	}
 
-	// ¼öÁ¤ÇÏ°í
+	// ìˆ˜ì •í•˜ê³ 
 	for (ptr = userList; ptr; ptr = ptr->next) {
 		fwprintf(fp, L"%d,%ls,%ls,%ls,%[^\n]",
 			ptr->userId,
@@ -110,16 +110,16 @@ void backupUserList() {
 			ptr->address);
 	}
 
-	// ´Ý´Â´Ù
+	// ë‹«ëŠ”ë‹¤
 	fclose(fp);
-	wprintf("\n\n\t\t\tuser Å×ÀÌºí ¹é¾÷ÀÌ ¼º°øÀûÀ¸·Î ¼öÇàµÆ½À´Ï´Ù");
+	wprintf("\n\n\t\t\tuser í…Œì´ë¸” ë°±ì—…ì´ ì„±ê³µì ìœ¼ë¡œ ìˆ˜í–‰ëìŠµë‹ˆë‹¤");
 	waitZeroInput();
 }
 
 saleNode* addSales(saleNode* saleToday, orderNode* p) {
 	saleNode* ptr, * tmp;
 
-	// csv ÆÄÀÏ¿¡ ÀÌ¹Ì ÀúÀåµÈ ¸Þ´º¸é ´õÇÑ´Ù.
+	// csv íŒŒì¼ì— ì´ë¯¸ ì €ìž¥ëœ ë©”ë‰´ë©´ ë”í•œë‹¤.
 	for (ptr = saleToday; ptr; ptr = ptr->next) {
 		if (ptr->menuId == p->menuId) {
 			ptr->sales += p->sales;
@@ -127,7 +127,7 @@ saleNode* addSales(saleNode* saleToday, orderNode* p) {
 		}
 	}
 
-	// ÆÄÀÏ¿¡ ¾ø´Â ¸Þ´º¸é saleNode »ý¼º
+	// íŒŒì¼ì— ì—†ëŠ” ë©”ë‰´ë©´ saleNode ìƒì„±
 	tmp = (saleNode*)malloc(sizeof(saleNode));
 	tmp->menuId = p->menuId;
 	wcscpy(tmp->menuName, p->menuName);

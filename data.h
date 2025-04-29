@@ -1,27 +1,27 @@
-// Ä¿ÇÇ ¸Ş´º¸¦ ÀúÀåÇÏ´Â ±¸Á¶Ã¼
+ï»¿// ì»¤í”¼ ë©”ë‰´ë¥¼ ì €ì¥í•˜ëŠ” êµ¬ì¡°ì²´
 typedef struct menuItem {
-	int id;				// ¸Ş´º ¹øÈ£
-	wchar_t menuName[30];	// ¸Ş´º ÀÌ¸§
-	int price;			// ´Ü°¡
+	int id;				// ë©”ë‰´ ë²ˆí˜¸
+	wchar_t menuName[30];	// ë©”ë‰´ ì´ë¦„
+	int price;			// ë‹¨ê°€
 	struct menuItem* next;
 }menuItem;
 
-// ÁÖ¹® Á¤º¸¸¦ ÀúÀåÇÏ´Â ±¸Á¶Ã¼
+// ì£¼ë¬¸ ì •ë³´ë¥¼ ì €ì¥í•˜ëŠ” êµ¬ì¡°ì²´
 typedef struct orderNode {
-	int orderId;			// ÁÖ¹® ¹øÈ£
-	int menuId;				// ¸Ş´º ¹øÈ£
-	wchar_t menuName[30];		// ¸Ş´º ÀÌ¸§
-	int price;				// ´Ü°¡
-	int sales;				// ÆÇ¸Å·®
+	int orderId;			// ì£¼ë¬¸ ë²ˆí˜¸
+	int menuId;				// ë©”ë‰´ ë²ˆí˜¸
+	wchar_t menuName[30];		// ë©”ë‰´ ì´ë¦„
+	int price;				// ë‹¨ê°€
+	int sales;				// íŒë§¤ëŸ‰
 	struct orderNode* next;
 }orderNode;
 
-// ¸ÅÃâ Á¤º¸¸¦ ÀúÀåÇÏ´Â ±¸Á¶Ã¼(Ä¿ÇÇ ¸Ş´ºº°·Î ÀúÀå)
+// ë§¤ì¶œ ì •ë³´ë¥¼ ì €ì¥í•˜ëŠ” êµ¬ì¡°ì²´(ì»¤í”¼ ë©”ë‰´ë³„ë¡œ ì €ì¥)
 typedef struct saleNode {
-	int menuId;				// ¸Ş´º ¹øÈ£
-	wchar_t menuName[30];		// ¸Ş´º ÀÌ¸§
-	int price;				// ´Ü°¡
-	int sales;				// ÆÇ¸Å·®
+	int menuId;				// ë©”ë‰´ ë²ˆí˜¸
+	wchar_t menuName[30];		// ë©”ë‰´ ì´ë¦„
+	int price;				// ë‹¨ê°€
+	int sales;				// íŒë§¤ëŸ‰
 	struct saleNode* next;
 }saleNode;
 
@@ -29,7 +29,7 @@ typedef struct userNode {
 	int userId;
 	wchar_t email[100];
 	wchar_t password[65];
-	wchar_t phoneNumber[28]; // ÀüÈ­¹øÈ£ 11ÀÚ¸® + ÇÏÀÌÇÂ 2ÀÚ¸® + ³Î¹®ÀÚ 1°³
+	wchar_t phoneNumber[28]; // ì „í™”ë²ˆí˜¸ 11ìë¦¬ + í•˜ì´í”ˆ 2ìë¦¬ + ë„ë¬¸ì 1ê°œ
 	wchar_t address[60];
 	struct userNode* next;
 }userNode;

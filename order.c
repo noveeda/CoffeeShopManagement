@@ -1,9 +1,9 @@
-#include "main.h"
+ï»¿#include "main.h"
 
 orderNode* orderList = NULL;
-static int orderNo = 0; // order.c³»¿¡¼­¸¸ Á¢±Ù °¡´ÉÇÑ Àü¿ª Á¤Àû º¯¼ö
+static int orderNo = 0; // order.cë‚´ì—ì„œë§Œ ì ‘ê·¼ ê°€ëŠ¥í•œ ì „ì—­ ì •ì  ë³€ìˆ˜
 
-// menuItemList¿¡¼­ menuId¿¡ ÇØ´çÇÏ´Â ¸Ş´º¸¦ °¡Á®¿È
+// menuItemListì—ì„œ menuIdì— í•´ë‹¹í•˜ëŠ” ë©”ë‰´ë¥¼ ê°€ì ¸ì˜´
 wchar_t* getMenuName(int menuId) {
 	menuItem* ptr;
 
@@ -12,7 +12,7 @@ wchar_t* getMenuName(int menuId) {
 			return ptr->menuName;
 		}
 	}
-	printf("ÇØ´ç ¸Ş´º°¡ ¾ø½À´Ï´Ù!");
+	printf("í•´ë‹¹ ë©”ë‰´ê°€ ì—†ìŠµë‹ˆë‹¤!");
 	return NULL;
 }
 
@@ -43,10 +43,10 @@ orderNode* insertOrderList(int menuId, int quantity, int price) {
 		orderList = tmp;
 	}
 	else {
-		// NULL Àü(¸¶Áö¸· ¿ä¼Ò)±îÁö ÀÌµ¿
+		// NULL ì „(ë§ˆì§€ë§‰ ìš”ì†Œ)ê¹Œì§€ ì´ë™
 		for (ptr = orderList; ptr->next; ptr = ptr->next) {}
 		
-		// ¸¶Áö¸· ¿ä¼Ò µÚ¿¡ ÀÌ¾îºÙÀÓ
+		// ë§ˆì§€ë§‰ ìš”ì†Œ ë’¤ì— ì´ì–´ë¶™ì„
 		ptr->next = tmp;
 	}
 
@@ -60,7 +60,7 @@ int getPrice(int menuId) {
 		if (ptr->id == menuId)
 			return ptr->price;
 	}
-	printf("ÇØ´ç ¸Ş´º°¡ ¾ø½À´Ï´Ù!");
+	printf("í•´ë‹¹ ë©”ë‰´ê°€ ì—†ìŠµë‹ˆë‹¤!");
 	return 0;
 }
 
@@ -97,10 +97,10 @@ void printOrder(orderNode* thisOrder) {
 	int totalPrice = 0;
 
 	if (thisOrder != NULL) {
-		printf("\n\n\t\t\t\t=== ÁÖ¹® ¸ñ·Ï ===\n");
+		printf("\n\n\t\t\t\t=== ì£¼ë¬¸ ëª©ë¡ ===\n");
 		printf("\n\t\t");
 		printf("-----------------------------------------------------------------");
-		printf("\n\t\t¹øÈ£\t\tÀ½·áÀÌ¸§\t\t     ¼ö·®\t   °¡°İ");
+		printf("\n\t\të²ˆí˜¸\t\tìŒë£Œì´ë¦„\t\t     ìˆ˜ëŸ‰\t   ê°€ê²©");
 		printf("\n\t\t");
 		printf("-----------------------------------------------------------------");
 		for (tmp = thisOrder; tmp; tmp = tmp->next) {
@@ -113,7 +113,7 @@ void printOrder(orderNode* thisOrder) {
 		}
 
 		printf("\n\t\t-----------------------------------------------------------------");
-		printf("\n\t\tÃÑ¾×\t\t\t\t\t\t\t%7d", totalPrice);
+		printf("\n\t\tì´ì•¡\t\t\t\t\t\t\t%7d", totalPrice);
 		printf("\n\t\t-----------------------------------------------------------------");
 		
 	}
@@ -126,12 +126,12 @@ void order() {
 
 	while (true) {
 		system("cls");
-		printf("\n\t\t\t\t=== (2) ÁÖ¹® ¸Ş´º ===\n");
+		printf("\n\t\t\t\t=== (2) ì£¼ë¬¸ ë©”ë‰´ ===\n");
 
 		showCoffeeMenu();
 		printOrder(thisOrder);
 
-		printf("\n\n\t\t\t ÁÖ¹®ÇÒ ¸Ş´º¸¦ ÀÔ·ÂÇÏ¼¼¿ä(ÁÖ¹® Á¾·á = 0): ");
+		printf("\n\n\t\t\t ì£¼ë¬¸í•  ë©”ë‰´ë¥¼ ì…ë ¥í•˜ì„¸ìš”(ì£¼ë¬¸ ì¢…ë£Œ = 0): ");
 		getchar();
 		scanf("%d", &menuId);
 			
@@ -139,12 +139,12 @@ void order() {
 			return;
 
 		if (isInMenu(menuId) == false) {
-			printf("\n\t\t\tÇØ´ç ¸Ş´º°¡ ¾ø½À´Ï´Ù!");
+			printf("\n\t\t\tí•´ë‹¹ ë©”ë‰´ê°€ ì—†ìŠµë‹ˆë‹¤!");
 			Sleep(1000);
 			continue;
 		}
 
-		printf("\t\t\t ¼ö·®À» ÀÔ·ÂÇÏ¼¼¿ä: ");
+		printf("\t\t\t ìˆ˜ëŸ‰ì„ ì…ë ¥í•˜ì„¸ìš”: ");
 		getchar();
 		scanf("%d", &quantity);
 		price = addOrder(menuId, quantity);
@@ -158,11 +158,11 @@ void deleteOrder() {
 
 	while (true) {
 		system("cls");
-		printf("\n\n\t\t\t\t=== (3) ÁÖ¹® Ãë¼Ò ===\n");
+		printf("\n\n\t\t\t\t=== (3) ì£¼ë¬¸ ì·¨ì†Œ ===\n");
 		showOrders();
 
 		printf("\n\n\t\t");
-		printf("Ãë¼ÒÇÒ ÁÖ¹®ÀÇ ¹øÈ£ ÀÔ·Â(¸Ş´º·Î µ¹¾Æ°¡·Á¸é 0): ");
+		printf("ì·¨ì†Œí•  ì£¼ë¬¸ì˜ ë²ˆí˜¸ ì…ë ¥(ë©”ë‰´ë¡œ ëŒì•„ê°€ë ¤ë©´ 0): ");
 		scanf("%d", &id);
 
 		if (id == 0 || orderList == NULL) {
@@ -173,15 +173,15 @@ void deleteOrder() {
 		if (orderList->orderId == id) {
 			freeTarget = orderList;
 			orderList = orderList->next;
-			printf("\n\n\t\tÁÖ¹® ¹øÈ£ %dÀÌ(°¡) Ãë¼ÒµÇ¾ú½À´Ï´Ù.", id);
+			printf("\n\n\t\tì£¼ë¬¸ ë²ˆí˜¸ %dì´(ê°€) ì·¨ì†Œë˜ì—ˆìŠµë‹ˆë‹¤.", id);
 			Sleep(2000);
 		}
 		else {
 			while (tmp->next) {
-				// ¸Ş¸ğ¸® ´©¼ö À§Çè ÇØ°á
+				// ë©”ëª¨ë¦¬ ëˆ„ìˆ˜ ìœ„í—˜ í•´ê²°
 				if (tmp->next->orderId == id) {
 					freeTarget = tmp->next;
-					printf("\n\n\t\tÁÖ¹®¹øÈ£ %dÀÌ(°¡) Ãë¼ÒµÇ¾ú½À´Ï´Ù.", id);
+					printf("\n\n\t\tì£¼ë¬¸ë²ˆí˜¸ %dì´(ê°€) ì·¨ì†Œë˜ì—ˆìŠµë‹ˆë‹¤.", id);
 					tmp->next = tmp->next->next;
 					Sleep(2000);
 					break;
@@ -191,14 +191,14 @@ void deleteOrder() {
 			}
 		}
 
-		free(freeTarget); // ¸Ş¸ğ¸® ÇØÁ¦
+		free(freeTarget); // ë©”ëª¨ë¦¬ í•´ì œ
 	}
 }
 
 void showOrderList() {
 	system("cls");
 
-	printf("\n\n\t\t\t\t=== (4) ÁÖ¹® ¸ñ·Ï ===\n");
+	printf("\n\n\t\t\t\t=== (4) ì£¼ë¬¸ ëª©ë¡ ===\n");
 	showOrders();
 	waitZeroInput();
 
@@ -215,11 +215,11 @@ void showOrders() {
 
 	printf("\n\t\t");
 	printf("---------------------------------------------------------");
-	printf("\n\t\tÁÖ¹®¹øÈ£\tÀ½·áÀÌ¸§\t       ¼ö·®\t   °¡°İ");
+	printf("\n\t\tì£¼ë¬¸ë²ˆí˜¸\tìŒë£Œì´ë¦„\t       ìˆ˜ëŸ‰\t   ê°€ê²©");
 	printf("\n\t\t");
 	printf("---------------------------------------------------------");
 	while (curr != NULL) {
-		// ÀÌ¹Ì ÁÖ¹®µÈ ¸Ş´º°¡ »èÁ¦µÇ¾úÀ» °æ¿ì¸¦ À§ÇÑ ¿¹¿Ü Ã³¸®
+		// ì´ë¯¸ ì£¼ë¬¸ëœ ë©”ë‰´ê°€ ì‚­ì œë˜ì—ˆì„ ê²½ìš°ë¥¼ ìœ„í•œ ì˜ˆì™¸ ì²˜ë¦¬
 		if (isInMenu(curr->menuId) == false) {
 			freeTarget = curr;
 			curr = curr->next;
@@ -235,10 +235,10 @@ void showOrders() {
 		}
 	}
 	printf("\n\t\t---------------------------------------------------------");
-	printf("\n\t\tÃÑ¾×\t\t\t\t\t\t%7d", totalPrice);
+	printf("\n\t\tì´ì•¡\t\t\t\t\t\t%7d", totalPrice);
 	printf("\n\t\t---------------------------------------------------------");
 
-	// ÀÌ¹Ì ÁÖ¹®µÈ ¸Ş´º°¡ »èÁ¦µÇ¾úÀ» °æ¿ì¸¦ À§ÇÑ ¿¹¿Ü Ã³¸®
+	// ì´ë¯¸ ì£¼ë¬¸ëœ ë©”ë‰´ê°€ ì‚­ì œë˜ì—ˆì„ ê²½ìš°ë¥¼ ìœ„í•œ ì˜ˆì™¸ ì²˜ë¦¬
 	free(freeTarget);
 	free(tmp);
 }

@@ -1,31 +1,31 @@
-#include "main.h"
+ï»¿#include "main.h"
 
 void trim(wchar_t* str) {
     wchar_t* start = str;
     wchar_t* end;
 
-    // ¾ÕÂÊ °ø¹éÀ» ´Ù °Ç³Ê¶Ü
+    // ì•žìª½ ê³µë°±ì„ ë‹¤ ê±´ë„ˆëœ€
     while (iswspace(*start)) {
         start++;
     }
 
-    // ¿ªÂüÁ¶·Î ¹®ÀÚ¿­ÀÌ ÀüºÎ °ø¹éÀÏ °æ¿ì Ã¹ ¹®ÀÚ¸¦ ³Î¹®ÀÚ·Î ¹Ù²ãÁÜ
+    // ì—­ì°¸ì¡°ë¡œ ë¬¸ìžì—´ì´ ì „ë¶€ ê³µë°±ì¼ ê²½ìš° ì²« ë¬¸ìžë¥¼ ë„ë¬¸ìžë¡œ ë°”ê¿”ì¤Œ
     if (*start == L'\0') {
         str[0] = L'\0';
         return;
     }
 
-    // ¹®ÀÚ¿­ ½ÃÀÛÁÖ¼Ò + ³Î¹®ÀÚ Àü±îÁöÀÇ ±æÀÌ
-    // = ¹®ÀÚ¿­ÀÇ ³¡ ÁÖ¼Ò
+    // ë¬¸ìžì—´ ì‹œìž‘ì£¼ì†Œ + ë„ë¬¸ìž ì „ê¹Œì§€ì˜ ê¸¸ì´
+    // = ë¬¸ìžì—´ì˜ ë ì£¼ì†Œ
     end = start + wcslen(start) - 1;
 
-    // ÈÄÀ§¿¡¼­ ÀüÀ§·Î ÀÌµ¿ÇÏ¸é¼­ °ø¹éÀº ´Ù ³Î¹®ÀÚ·Î º¯È¯
+    // í›„ìœ„ì—ì„œ ì „ìœ„ë¡œ ì´ë™í•˜ë©´ì„œ ê³µë°±ì€ ë‹¤ ë„ë¬¸ìžë¡œ ë³€í™˜
     while (end > start && iswspace(*end)) {
         *end = L'\0';
         end--;
     }
 
-    // strÀÇ ½ÃÀÛ À§Ä¡¸¦ Ã¹ ¹®ÀÚ À§Ä¡·Î º¯°æÇØÁØ´Ù.
+    // strì˜ ì‹œìž‘ ìœ„ì¹˜ë¥¼ ì²« ë¬¸ìž ìœ„ì¹˜ë¡œ ë³€ê²½í•´ì¤€ë‹¤.
     if (start != str) {
         wchar_t* dst = str;
         while (*dst++ != L'\0');
@@ -35,12 +35,12 @@ void trim(wchar_t* str) {
 }
 
 void sha256_wchar(const wchar_t* wstr, char outputBuffer[65]) {
-    char mbstr[512];  // º¯È¯µÈ ¸ÖÆ¼¹ÙÀÌÆ® ¹®ÀÚ¿­ ÀúÀå
+    char mbstr[512];  // ë³€í™˜ëœ ë©€í‹°ë°”ì´íŠ¸ ë¬¸ìžì—´ ì €ìž¥
 
-    // wchar_t* -> char* ·Î º¯È¯ (UTF-8·Î)
+    // wchar_t* -> char* ë¡œ ë³€í™˜ (UTF-8ë¡œ)
     WideCharToMultiByte(CP_UTF8, 0, wstr, -1, mbstr, sizeof(mbstr), NULL, NULL);
 
-    // SHA-256 °è»ê
+    // SHA-256 ê³„ì‚°
     unsigned char hash[SHA256_DIGEST_LENGTH];
     SHA256_CTX sha256;
 
@@ -51,5 +51,5 @@ void sha256_wchar(const wchar_t* wstr, char outputBuffer[65]) {
     for (int i = 0; i < SHA256_DIGEST_LENGTH; i++) {
         sprintf(outputBuffer + (i * 2), "%02x", hash[i]);
     }
-    outputBuffer[64] = 0;  // ³Î Á¾·á
+    outputBuffer[64] = 0;  // ë„ ì¢…ë£Œ
 }

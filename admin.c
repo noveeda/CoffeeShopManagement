@@ -1,9 +1,9 @@
-#include "main.h"
+ï»¿#include "main.h"
 
 void showSaleToday() {
 	system("cls");
-	printf("\n\t\t\t\t=== (5) ¿À´ÃÀÇ ¸ÅÃâ ===\n");
-	printf("\n\t\t\t¿À´Ã ÇöÀç±îÁö ¸ÅÃâ : %d¿ø\n", totalSales());
+	printf("\n\t\t\t\t=== (5) ì˜¤ëŠ˜ì˜ ë§¤ì¶œ ===\n");
+	printf("\n\t\t\tì˜¤ëŠ˜ í˜„ì¬ê¹Œì§€ ë§¤ì¶œ : %dì›\n", totalSales());
 	waitZeroInput();
 }
 
@@ -23,10 +23,10 @@ int addCoffeeMenu() {
 	wchar_t menuName[30] = L"";
 
 	system("cls");
-	printf("\n\t\t\t\t=== (6) »õ·Î¿î ¸Ş´º Ãß°¡ ===\n");
+	printf("\n\t\t\t\t=== (6) ìƒˆë¡œìš´ ë©”ë‰´ ì¶”ê°€ ===\n");
 	showCoffeeMenu();
 
-	printf("\n\n\t\tÃß°¡ÇÒ ¸Ş´ºÀÇ ¹øÈ£ ÀÔ·Â(¸Ş´º·Î µ¹¾Æ°¡·Á¸é 0): ");
+	printf("\n\n\t\tì¶”ê°€í•  ë©”ë‰´ì˜ ë²ˆí˜¸ ì…ë ¥(ë©”ë‰´ë¡œ ëŒì•„ê°€ë ¤ë©´ 0): ");
 	scanf("%d", &id);
 
 	if (id == 0) {
@@ -34,16 +34,16 @@ int addCoffeeMenu() {
 	}
 
 	if (isInMenu(id)) {
-		printf("\n\n\t\tÀÌ¹Ì ÇØ´ç ¹øÈ£¿¡ ¸Ş´º°¡ Á¸ÀçÇÕ´Ï´Ù!");
+		printf("\n\n\t\tì´ë¯¸ í•´ë‹¹ ë²ˆí˜¸ì— ë©”ë‰´ê°€ ì¡´ì¬í•©ë‹ˆë‹¤!");
 		Sleep(2000);
 		return 0;
 	}
 
 	getchar();
-	printf("\n\t\tÃß°¡ÇÒ ¸Ş´ºÀÇ ÀÌ¸§ ÀÔ·Â : ");
+	printf("\n\t\tì¶”ê°€í•  ë©”ë‰´ì˜ ì´ë¦„ ì…ë ¥ : ");
 	wscanf(L"%[^\n]ls", menuName);
 	
-	printf("\n\t\tÃß°¡ÇÒ ¸Ş´ºÀÇ °¡°İ ÀÔ·Â : ");
+	printf("\n\t\tì¶”ê°€í•  ë©”ë‰´ì˜ ê°€ê²© ì…ë ¥ : ");
 	wscanf(L"%d", &price);
 
 	insertCoffeeMenu(id, menuName, price);
@@ -54,10 +54,10 @@ int deleteCoffeeMenu() {
 	int id, result;
 
 	system("cls");
-	printf("\n\t\t\t\t=== (7) Ä¿ÇÇ ¸Ş´º »èÁ¦ ===\n");
+	printf("\n\t\t\t\t=== (7) ì»¤í”¼ ë©”ë‰´ ì‚­ì œ ===\n");
 	showCoffeeMenu();
 
-	printf("\n\n\t\t»èÁ¦ÇÒ ¸Ş´º ¹øÈ£ ÀÔ·Â(¸ŞÀÎ ¸Ş´º·Î µ¹¾Æ°¡·Á¸é 0):");
+	printf("\n\n\t\tì‚­ì œí•  ë©”ë‰´ ë²ˆí˜¸ ì…ë ¥(ë©”ì¸ ë©”ë‰´ë¡œ ëŒì•„ê°€ë ¤ë©´ 0):");
 	scanf("%d", &id);
 	if (id == 0)
 		return 0;
@@ -65,11 +65,11 @@ int deleteCoffeeMenu() {
 	result = deleteMenuList(id);
 
 	system("cls");
-	printf("\n\t\t\t\t=== (7) ¸Ş´º »èÁ¦ ===\n");
+	printf("\n\t\t\t\t=== (7) ë©”ë‰´ ì‚­ì œ ===\n");
 	showCoffeeMenu();
 
 	if (result == 1)
-		printf("\n\n\t\t%d¹ø ¸Ş´º°¡ »èÁ¦µÇ¾ú½À´Ï´Ù.", id);
+		printf("\n\n\t\t%dë²ˆ ë©”ë‰´ê°€ ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.", id);
 	waitZeroInput();
 
 	return 1;
@@ -87,7 +87,7 @@ int deleteMenuList(int id) {
 		}
 
 		if (tmp->next == NULL) {
-			printf("\n\n\t\t\tÀÔ·ÂµÈ ¹øÈ£ÀÇ ¸Ş´º°¡ ¾ø½À´Ï´Ù!");
+			printf("\n\n\t\t\tì…ë ¥ëœ ë²ˆí˜¸ì˜ ë©”ë‰´ê°€ ì—†ìŠµë‹ˆë‹¤!");
 			Sleep(1000);
 			return 0;
 		}

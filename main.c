@@ -1,65 +1,65 @@
-#include "main.h"
+ï»¿#include "main.h"
 
 int main() {
-	// ÄÜ¼ÖÃ¢ Á¦¸ñ
+	// ì½˜ì†”ì°½ ì œëª©
 	system("title Coffee Shop Management System");
-	// 88*40Å©±â ÄÜ¼Ö·Î Å´.
+	// 88*40í¬ê¸° ì½˜ì†”ë¡œ í‚´.
 	system("mode con: cols=88 lines=40");
-	// ¸ðµç Ä«Å×°í¸®¿¡ ´ëÇØ ÇÑ±¹¾î·Î ¼³Á¤
+	// ëª¨ë“  ì¹´í…Œê³ ë¦¬ì— ëŒ€í•´ í•œêµ­ì–´ë¡œ ì„¤ì •
 	_wsetlocale(LC_ALL, L"kor");
 
-	// ºñ¹Ð¹øÈ£°¡ Æ²¸®¸é Á¾·á
+	// ë¹„ë°€ë²ˆí˜¸ê°€ í‹€ë¦¬ë©´ ì¢…ë£Œ
 	if (passwordCheck() == 0) {
 		return 0;
 	}
 
-	loadCoffeeMenu();	// Ä¿ÇÇ ¸Þ´º ÀÐ¾î¿À±â
-	loadTodaySales();	// ¿À´ÃÀÇ ¸ÅÃâ ÀÐ¾î¿À±â
+	loadCoffeeMenu();	// ì»¤í”¼ ë©”ë‰´ ì½ì–´ì˜¤ê¸°
+	loadTodaySales();	// ì˜¤ëŠ˜ì˜ ë§¤ì¶œ ì½ì–´ì˜¤ê¸°
 
 	mainMenu();
 }
 
-// ºñ¹Ð¹øÈ£°¡ ¸ÂÀ¸¸é 1 ¾Æ´Ï¸é 0À» ¹ÝÈ¯ÇÑ´Ù.
+// ë¹„ë°€ë²ˆí˜¸ê°€ ë§žìœ¼ë©´ 1 ì•„ë‹ˆë©´ 0ì„ ë°˜í™˜í•œë‹¤.
 int passwordCheck() {
 	int password;
 
-	printf("\n\t\t\t  Ä¿ÇÇ¼ó °ü¸®½Ã½ºÅÛ!");
-	printf("\n\n\t\t\tºñ¹Ð¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+	printf("\n\t\t\t  ì»¤í”¼ìˆ ê´€ë¦¬ì‹œìŠ¤í…œ!");
+	printf("\n\n\t\t\të¹„ë°€ë²ˆí˜¸ë¥¼ ìž…ë ¥í•˜ì„¸ìš”: ");
 	scanf("%d", &password);
 
 	if (password == 1234) {
 		return 1;
 	}
 
-	printf("\n\t\t\tºñ¹Ð¹øÈ£°¡ Æ²¸³´Ï´Ù!\n½Ã½ºÅÛÀ» Á¾·áÇÕ´Ï´Ù!\n");
+	printf("\n\t\t\të¹„ë°€ë²ˆí˜¸ê°€ í‹€ë¦½ë‹ˆë‹¤!\nì‹œìŠ¤í…œì„ ì¢…ë£Œí•©ë‹ˆë‹¤!\n");
 	Sleep(1000);
 	return 0;
 }
 
-// menu.txt ÆÄÀÏ¿¡¼­ ¸Þ´º Á¤º¸¸¦ ÀÐ¾î¼­ menuItemList¿¡ ÀúÀåÇÑ´Ù.
+// menu.txt íŒŒì¼ì—ì„œ ë©”ë‰´ ì •ë³´ë¥¼ ì½ì–´ì„œ menuItemListì— ì €ìž¥í•œë‹¤.
 void loadCoffeeMenu() {
-	FILE* fp;	// ÆÄÀÏ Æ÷ÀÎÅÍ ¼±¾ð
+	FILE* fp;	// íŒŒì¼ í¬ì¸í„° ì„ ì–¸
 	menuItem* tmp = menuItemList;
 	wchar_t line[256], menuName[30];
 	int id, price;
 	
 
-	// menu.txt ÆÄÀÏÀ» ÀÐ±â¸ðµå·Î ¿¬´Ù
+	// menu.txt íŒŒì¼ì„ ì½ê¸°ëª¨ë“œë¡œ ì—°ë‹¤
 	fp = _wfopen(L"menu.txt", L"rt, ccs=UTF-8");
 
-	// ¿¡·¯ ¹ß»ý½Ã Á¾·á
-	// (ÆÄÀÏÀÌ ¾ø´Â°æ¿ì ¶Ç´Â °æ·Î°¡ Àß¸ø ÁöÁ¤µÈ °æ¿ì)
+	// ì—ëŸ¬ ë°œìƒì‹œ ì¢…ë£Œ
+	// (íŒŒì¼ì´ ì—†ëŠ”ê²½ìš° ë˜ëŠ” ê²½ë¡œê°€ ìž˜ëª» ì§€ì •ëœ ê²½ìš°)
 	if (fp == NULL) {
-		printf("Error(loadMenu): menu.txt ÆÄÀÏ ¿ÀÇÂ ¿¡·¯!");
+		printf("Error(loadMenu): menu.txt íŒŒì¼ ì˜¤í”ˆ ì—ëŸ¬!");
 		return;
 	}
 
-	// fp°¡ NULLÀ» ¸¸³ª±â Àü±îÁö line¿¡ ÆÄÀÏ ¾ÈÀÇ ¹®ÀÚ¿­À» ¹Þ´Â´Ù.
+	// fpê°€ NULLì„ ë§Œë‚˜ê¸° ì „ê¹Œì§€ lineì— íŒŒì¼ ì•ˆì˜ ë¬¸ìžì—´ì„ ë°›ëŠ”ë‹¤.
 	while (fgetws(line, sizeof(line) / sizeof(wchar_t), fp) != NULL) {
 		/*
-		* line¿¡ ¹ÞÀº ¹®ÀÚ¿­À» ´ÙÀ½ Çü½Ä¿¡ ¸Â°Ô 
-		* ºÐÇØÇØ¼­ °¢°¢ id, menuName, price¿¡ °ª ÇÒ´çÇÑ´Ù.
-		* %[^,] : °ø¹éÀ» Æ÷ÇÔÇÑ ¹®ÀÚ¿­À» ¹Þ´Â´Ù.
+		* lineì— ë°›ì€ ë¬¸ìžì—´ì„ ë‹¤ìŒ í˜•ì‹ì— ë§žê²Œ 
+		* ë¶„í•´í•´ì„œ ê°ê° id, menuName, priceì— ê°’ í• ë‹¹í•œë‹¤.
+		* %[^,] : ê³µë°±ì„ í¬í•¨í•œ ë¬¸ìžì—´ì„ ë°›ëŠ”ë‹¤.
 		*/ 
 		swscanf(line, L"%d,%[^,],%d\n", &id, menuName, &price);
 		insertCoffeeMenu(id, menuName, price);
@@ -70,10 +70,10 @@ void loadCoffeeMenu() {
 
 void insertCoffeeMenu(int id, const wchar_t* menuName, int price) {
 	menuItem* head;
-	// ±¸Á¶Ã¼ Å©±â¸¸Å­ µ¿ÀûÇÒ´ç
+	// êµ¬ì¡°ì²´ í¬ê¸°ë§Œí¼ ë™ì í• ë‹¹
 	menuItem* tmp = (menuItem*)malloc(sizeof(menuItem));
 	
-	// ¸Þ¸ð¸® ÇÒ´ç ÈÄ ¸Å°³º¯¼ö·Î ¹ÞÀº °ªÀ» ±¸Á¶Ã¼¿¡ ÇÒ´ç
+	// ë©”ëª¨ë¦¬ í• ë‹¹ í›„ ë§¤ê°œë³€ìˆ˜ë¡œ ë°›ì€ ê°’ì„ êµ¬ì¡°ì²´ì— í• ë‹¹
 	if (tmp != NULL) {
 		tmp->id = id;
 		wcscpy(tmp->menuName, menuName);
@@ -83,22 +83,22 @@ void insertCoffeeMenu(int id, const wchar_t* menuName, int price) {
 		//wprintf(L"%d, %ls, %d\n", tmp->id, tmp->menuName, tmp->price);
 	}
 	else {
-		printf("¸Þ¸ð¸® ÇÒ´ç ¿¡·¯: insertCoffeeMenu\n");
+		printf("ë©”ëª¨ë¦¬ í• ë‹¹ ì—ëŸ¬: insertCoffeeMenu\n");
 		return;
 	}
 
-	// main.h¿¡¼­ Àü¿ªÀ¸·Î ±ò¾ÆµÐ menuItemList
+	// main.hì—ì„œ ì „ì—­ìœ¼ë¡œ ê¹”ì•„ë‘” menuItemList
 	if (menuItemList == NULL) {
 		/*
-		* menuItemList°¡ ºñ¾îÀÖÀ¸¸é Áö±Ý ¸¸µç
-		* tmp¸¦ ÂüÁ¶
+		* menuItemListê°€ ë¹„ì–´ìžˆìœ¼ë©´ ì§€ê¸ˆ ë§Œë“ 
+		* tmpë¥¼ ì°¸ì¡°
 		*/
 		menuItemList = tmp;
 	}
 	else {
 		/*
-		* ¾Èºñ¾îÀÖÀ¸¸é ¸®½ºÆ® ³¡¿¡´Ù°¡
-		* ¸¸µç menuItem ÀÌ¾îºÙÀÌ±â(append)
+		* ì•ˆë¹„ì–´ìžˆìœ¼ë©´ ë¦¬ìŠ¤íŠ¸ ëì—ë‹¤ê°€
+		* ë§Œë“  menuItem ì´ì–´ë¶™ì´ê¸°(append)
 		*/
 		head = menuItemList;
 		while (head->next != NULL) {

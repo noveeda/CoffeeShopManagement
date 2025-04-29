@@ -1,27 +1,27 @@
-#include "main.h"
+ï»¿#include "main.h"
 
 /*
 * TODO:
-*	·Î±×ÀÎ ÆÇº° ·ÎÁ÷
-*	¾ÆÀÌµð Áßº¹ ¿©ºÎ °Ë»ç
-*	À¯Àúid AUTO_INCREMENT À¯Áö
+*	ë¡œê·¸ì¸ íŒë³„ ë¡œì§
+*	ì•„ì´ë”” ì¤‘ë³µ ì—¬ë¶€ ê²€ì‚¬
+*	ìœ ì €id AUTO_INCREMENT ìœ ì§€
 *   
 */
 
-//¹Ì¿Ï¼º
+//ë¯¸ì™„ì„±
 void showLogin() {
 	wchar_t id, password;
 
 
 	system("cls");
-	printf("\n\t\t\t  ·Î±×ÀÎ ÆäÀÌÁö");
+	printf("\n\t\t\t  ë¡œê·¸ì¸ íŽ˜ì´ì§€");
 	printf("\n\n\t\t\tID: ");
 	wscanf(L"%ls", id);
 	
 	printf("\n\n\t\t\tPW: ");
 	wscanf(L"%ls", password);
 
-	trim(id); // ¾ÕµÚ °ø¹é Á¦°Å
+	trim(id); // ì•žë’¤ ê³µë°± ì œê±°
 	trim(password);
 
 	
@@ -32,34 +32,34 @@ void showSignUp() {
 	wchar_t email[100], password[100], phoneNumber[28], address[60];
 	while (true) {
 		system("cls");
-		printf("\n\t\t\t  È¸¿ø°¡ÀÔ ÆäÀÌÁö");
-		printf("\n\n\t\t\tÀÌ¸ÞÀÏ: ");
+		printf("\n\t\t\t  íšŒì›ê°€ìž… íŽ˜ì´ì§€");
+		printf("\n\n\t\t\tì´ë©”ì¼: ");
 		wscanf(L"%ls", email);
-		trim(email); // ¾ÕµÚ °ø¹é Á¦°Å
+		trim(email); // ì•žë’¤ ê³µë°± ì œê±°
 		if (isEmailExist(email)) {
-			printf("\n\n\t\t\tÀÌ¹Ì Á¸ÀçÇÏ´Â ÀÌ¸ÞÀÏÀÔ´Ï´Ù.");
+			printf("\n\n\t\t\tì´ë¯¸ ì¡´ìž¬í•˜ëŠ” ì´ë©”ì¼ìž…ë‹ˆë‹¤.");
 			Sleep(2000);
 			continue;
 		}
 
-		printf("\n\n\t\t\tºñ¹Ð¹øÈ£: ");
+		printf("\n\n\t\t\të¹„ë°€ë²ˆí˜¸: ");
 		wscanf(L"%ls", password);
-		printf("\n\n\t\t\tÀüÈ­¹øÈ£: ");
+		printf("\n\n\t\t\tì „í™”ë²ˆí˜¸: ");
 		wscanf(L"%ls", phoneNumber);
-		printf("\n\n\t\t\tÁÖ¼Ò: ");
+		printf("\n\n\t\t\tì£¼ì†Œ: ");
 		wscanf(L"%[^\n]", address);
 
 	}
-	// userId´Â AUTO_INCREMENT·Î ¼³Á¤
+	// userIdëŠ” AUTO_INCREMENTë¡œ ì„¤ì •
 	userId = getMaxId() + 1;
 
-	// userList¿¡ »ðÀÔ
+	// userListì— ì‚½ìž…
 	insertUserNode(userId, email, password, phoneNumber, address);
-	// Å×ÀÌºí¿¡ ¹é¾÷
+	// í…Œì´ë¸”ì— ë°±ì—…
 	backupUserList();
 }
 
-// userÅ×ÀÌºí ÃÖÃÊ Á¶È¸
+// userí…Œì´ë¸” ìµœì´ˆ ì¡°íšŒ
 userNode* loadUserList() {
 	FILE* fp;
 	fp = _wfopen(L"user.csv", L"r, ccs=UTF-8");
@@ -68,15 +68,15 @@ userNode* loadUserList() {
 	wchar_t line[300], email[100], password[100], phoneNumber[28], address[60];
 	int userId;
 
-	// ¿¡·¯ ¹ß»ý½Ã Á¾·á
-	// (ÆÄÀÏÀÌ ¾ø´Â°æ¿ì ¶Ç´Â °æ·Î°¡ Àß¸ø ÁöÁ¤µÈ °æ¿ì)
+	// ì—ëŸ¬ ë°œìƒì‹œ ì¢…ë£Œ
+	// (íŒŒì¼ì´ ì—†ëŠ”ê²½ìš° ë˜ëŠ” ê²½ë¡œê°€ ìž˜ëª» ì§€ì •ëœ ê²½ìš°)
 	if (fp == NULL) {
-		printf("Error(loadUserList): user.csv ÆÄÀÏ ¿ÀÇÂ ¿¡·¯!");
+		printf("Error(loadUserList): user.csv íŒŒì¼ ì˜¤í”ˆ ì—ëŸ¬!");
 		Sleep(1000);
 		return;
 	}
 
-	// fp°¡ NULLÀ» ¸¸³ª±â Àü±îÁö line¿¡ ÆÄÀÏ ¾ÈÀÇ ¹®ÀÚ¿­À» ¹Þ´Â´Ù.
+	// fpê°€ NULLì„ ë§Œë‚˜ê¸° ì „ê¹Œì§€ lineì— íŒŒì¼ ì•ˆì˜ ë¬¸ìžì—´ì„ ë°›ëŠ”ë‹¤.
 	while (fgetws(line, sizeof(line) / sizeof(wchar_t), fp) != NULL) {
 		swscanf(line, L"%d,%ls,%ls,%ls,%[^\n]",
 			userId,
@@ -96,7 +96,7 @@ void insertUserNode(
 	const wchar_t* address
 ) 
 {
-	// userNode ¼±¾ð ¹× ÃÊ±âÈ­
+	// userNode ì„ ì–¸ ë° ì´ˆê¸°í™”
 	userNode* newUserNode = (userNode*)malloc(sizeof(userNode));
 	newUserNode->userId = userId;
 	wcscpy(newUserNode->email, email);
@@ -105,7 +105,7 @@ void insertUserNode(
 	wcscpy(newUserNode->address, address);
 	newUserNode->next = NULL;
 
-	// userList¿¡ Ãß°¡
+	// userListì— ì¶”ê°€
 	if (userList == NULL) {
 		userList = newUserNode;
 	}
@@ -120,18 +120,18 @@ bool isEmailExist(const wchar_t* email) {
 
 	for (userNode* tmp = userList; tmp; tmp = tmp->next) {
 		if (wcscmp(tmp->email, email) == 0) {
-			return true; // ÀÌ¸ÞÀÏÀÌ Á¸ÀçÇÔ
+			return true; // ì´ë©”ì¼ì´ ì¡´ìž¬í•¨
 		}
 		tmp = tmp->next;
 	}
-	return false; // ÀÌ¸ÞÀÏÀÌ Á¸ÀçÇÏÁö ¾ÊÀ½
+	return false; // ì´ë©”ì¼ì´ ì¡´ìž¬í•˜ì§€ ì•ŠìŒ
 }
 
 int getMaxId() {
 	userNode* tmp = userList;
 	int maxId = 0;
 
-	// DBÀÇ AUTO_INCREMENT¿Í À¯»çÇÑ ±â´ÉÀ» ±¸Çö
+	// DBì˜ AUTO_INCREMENTì™€ ìœ ì‚¬í•œ ê¸°ëŠ¥ì„ êµ¬í˜„
 	for (tmp; tmp; tmp = tmp->next) {
 		if (tmp->userId > maxId) {
 			maxId = tmp->userId;
