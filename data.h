@@ -28,7 +28,7 @@ typedef struct saleNode {
 typedef struct userNode {
 	int userId;
 	wchar_t email[100];
-	wchar_t password[65];
+	wchar_t password[65];	 // SHA256으로 암호화한 64자리z
 	wchar_t phoneNumber[28]; // 전화번호 11자리 + 하이픈 2자리 + 널문자 1개
 	wchar_t address[60];
 	struct userNode* next;

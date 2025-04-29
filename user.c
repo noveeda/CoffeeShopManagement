@@ -13,7 +13,7 @@
 
 //미완성
 void showLogin() {
-	wchar_t id, password;
+	wchar_t id[100], password[100], encryptedPassword[65];
 
 
 	system("cls");
@@ -27,9 +27,18 @@ void showLogin() {
 	trim(id); // 앞뒤 공백 제거
 	trim(password);
 
+	// 로그인 수행
+	if (loginUser(id, password)){
+		printf("\n\n\t\t로그인 성공");
+	}
+	else {
+		printf("\n\n\t\t로그인 실패. 없는 계정입니다.");
+	}
 	
+	Sleep(500);
 }
 
+// 회원가입 페이지
 void showSignUp() {
 	int userId;
 	wchar_t email[100], password[100], phoneNumber[28], address[60], encryptedPassword[65];
@@ -64,7 +73,7 @@ void showSignUp() {
 	backupUserList();
 }
 
-// user테이블 최초 조회
+// user테이블 조회
 userNode* loadUserList() {
 	FILE* fp;
 	fp = _wfopen(L"user.csv", L"r, ccs=UTF-8");
@@ -137,6 +146,9 @@ int getMaxId() {
 	userNode* tmp = userList;
 	int maxId = 0;
 
+	// 아모고토 없으면 0
+	if (tmp == NULL) return maxId;
+
 	// DB의 AUTO_INCREMENT와 유사한 기능을 구현
 	for (tmp; tmp; tmp = tmp->next) {
 		if (tmp->userId > maxId) {
@@ -144,5 +156,26 @@ int getMaxId() {
 		}
 	}
 
+	// 있으면 제일 큰값으루
 	return maxId;
+}
+
+bool loginUser(const wchar_t* email, const wchar_t* password) {
+	wchar_t encryptedPassword[65];
+	sha256_wchar(password, encryptedPassword); // 비밀번호 암호화
+
+	userNode* tmp = userList;
+
+	for (tmp; tmp; tmp = tmp->next) {
+
+		bool idCheck = wcscmp(tmp->email, email) == 0;
+		bool pwCheck = wcscmp(tmp->password, encryptedPassword) == 0;
+		
+		// id 비교
+		if (idCheck && pwCheck) {
+			return true;
+		}
+	}
+
+	return false;
 }

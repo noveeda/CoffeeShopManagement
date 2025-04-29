@@ -42,8 +42,8 @@ saleNode* addSales(saleNode* saleToday, orderNode* p);
 
 // user.c 함수 원형
 void showLogin();
+void showSignUp();
 userNode* loadUserList();
-bool processLogin();
 void backupUserList();
 
 // utils.c
