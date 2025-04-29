@@ -2,12 +2,14 @@
 
 /*
 * TODO:
-*	로그인 페이지
-*	회원가입 페이지
-*	로그인 판별 로직
-*	회원가입 로직
-*	아이디 중복 여부 검사
+*	로그인 페이지 v
+*	회원가입 페이지 v
+*	로그인 판별 로직 v
+*	회원가입 로직 v
+*	아이디 중복 여부 검사 v
 *	유저id AUTO_INCREMENT 유지 v
+*	회원정보 삭제
+*	회원정보 수정
 *   
 */
 
@@ -179,3 +181,8 @@ bool loginUser(const wchar_t* email, const wchar_t* password) {
 
 	return false;
 }
+
+
+void deleteUser() {}
+
+void updateUser() {}
