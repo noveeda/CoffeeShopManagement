@@ -37,18 +37,23 @@ void mainMenu() {
 				saveMenuFile();
 			break;
 		case 8:
-			// 회원가입(이메일id,비밀번호, 
-			// 전화번호, 주소_스페이스가능)
 			backup();
 			break;
+		// 회원가입(이메일id,비밀번호,전화번호,주소_스페이스가능)
 		case 9:
 			break;
+		// 회원전체 목록보고
 		case 10:
 			break;
+		// 회원정보 수정
 		case 11:
 			break;
+
+		// 회원정보 삭제
 		case 12:
 			break;
+
+		// 회원 로그인
 		case 13:
 			break;
 		

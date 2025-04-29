@@ -34,7 +34,8 @@ void trim(wchar_t* str) {
     }
 }
 
-void sha256_wchar(const wchar_t* wstr, char outputBuffer[65]) {
+// wstr의 값을 sha256 암호화 처리한다.
+void sha256_wchar(const wchar_t* wstr, wchar_t* output) {
     char mbstr[512];  // 변환된 멀티바이트 문자열 저장
 
     // wchar_t* -> char* 로 변환 (UTF-8로)
@@ -43,13 +44,26 @@ void sha256_wchar(const wchar_t* wstr, char outputBuffer[65]) {
     // SHA-256 계산
     unsigned char hash[SHA256_DIGEST_LENGTH];
     SHA256_CTX sha256;
-
     SHA256_Init(&sha256);
     SHA256_Update(&sha256, mbstr, strlen(mbstr));
     SHA256_Final(hash, &sha256);
 
+    // 계산 결과를 16진수 char* 문자열로 변환
+    char hexStr[65];
     for (int i = 0; i < SHA256_DIGEST_LENGTH; i++) {
-        sprintf(outputBuffer + (i * 2), "%02x", hash[i]);
+        sprintf(hexStr + (i * 2), "%02x", hash[i]);
     }
-    outputBuffer[64] = 0;  // 널 종료
+    hexStr[64] = '\0';  // 널 종료
+
+    wchar_t wHexStr[65];  // 반환할 wchar_t 배열 (static: 메모리 유지)
+    MultiByteToWideChar(
+        CP_UTF8,    // 변환 대상 코드 페이지
+        0,          // 플래그(뭐하는건지 모르겠다)
+        hexStr,     // 원본 데이터
+        -1,         // 변환할 문자열 길이(-1이면 자동 계산)
+        wHexStr,    // 결과를 받을 버퍼
+        sizeof(wHexStr) / sizeof(wchar_t), // 버퍼 크기 = 130 / 2 = 65자
+    );
+
+    wcscpy(output, wHexStr);
 }

@@ -42,9 +42,12 @@ saleNode* addSales(saleNode* saleToday, orderNode* p);
 
 // user.c 함수 원형
 void showLogin();
+void showSignUp();
 userNode* loadUserList();
-bool processLogin();
 void backupUserList();
 
+// utils.c
+// wchar_t형 문자열을 sha256으로 암호화
+void sha256_wchar(const wchar_t* wstr, char outputBuffer[65])
 void trim(wchar_t* str);
 #endif // !MAIN_H
