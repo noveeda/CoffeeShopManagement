@@ -1,5 +1,4 @@
 ﻿#include "main.h"
-
 /*
 * TODO:
 *	로그인 페이지 v
@@ -8,36 +7,51 @@
 *	회원가입 로직 v
 *	아이디 중복 여부 검사 v
 *	유저id AUTO_INCREMENT 유지 v
-*	회원정보 삭제
+*	회원정보 삭제 v
 *	회원정보 수정
 *   
 */
 
-//미완성
+userNode* userList = NULL;	// 사용자 정보의 연결리스트
+userNode* user = NULL;		// 로그인한 사용자 정보
+
+// 로그인한 유저 정보
 void showLogin() {
-	wchar_t id[100], password[100], encryptedPassword[65];
-
-
-	system("cls");
-	printf("\n\t\t\t  로그인 페이지");
-	printf("\n\n\t\t\tID: ");
-	wscanf(L"%ls", id);
-	
-	printf("\n\n\t\t\tPW: ");
-	wscanf(L"%ls", password);
-
-	trim(id); // 앞뒤 공백 제거
-	trim(password);
-
-	// 로그인 수행
-	if (loginUser(id, password)){
-		printf("\n\n\t\t로그인 성공");
+	if (user != NULL) {
+		printf("\n\n\t\t\t이미 로그인 되어있습니다.");
+		Sleep(1000);
+		return;
 	}
-	else {
-		printf("\n\n\t\t로그인 실패. 없는 계정입니다.");
+
+	bool condition = true;
+	while (condition) {
+
+		wchar_t email[100], password[100], encryptedPassword[65];
+		system("cls");
+		printf("\n\t\t\t  로그인 페이지");
+		printf("\n\n\t\t\tEMAIL: ");
+		wscanf(L"%ls", email);
+		
+		getchar(); // 버퍼 비우기
+		printf("\n\n\t\t\tPASSWORD: ");
+		wscanf(L"%ls", password);
+
+		trim(email); // 앞뒤 공백 제거
+		trim(password);
+
+		// 로그인 수행
+		bool isLogined = loginUser(email, password);
+		if (isLogined){
+			printf("\n\n\t\t로그인 성공");
+			user = getUserNodeByEmail(email);
+			condition = false;
+		}
+		else {
+			printf("\n\n\t\t로그인 실패. 없는 계정입니다.");
+		}
+
+		Sleep(500);
 	}
-	
-	Sleep(500);
 }
 
 // 회원가입 페이지
@@ -62,8 +76,9 @@ void showSignUp() {
 		printf("\n\n\t\t\t전화번호: ");
 		wscanf(L"%ls", phoneNumber);
 		printf("\n\n\t\t\t주소: ");
-		wscanf(L"%[^\n]", address);
-
+		getchar();
+		fgetws(address, 60, stdin); // 공백을 포함한 주소 입력
+		break;
 	}
 	// userId는 AUTO_INCREMENT로 설정
 	userId = getMaxId() + 1;
@@ -76,14 +91,13 @@ void showSignUp() {
 }
 
 // user테이블 조회
-userNode* loadUserList() {
+void loadUserList() {
 	FILE* fp;
-	fp = _wfopen(L"user.csv", L"r, ccs=UTF-8");
+	fp = _wfopen(L"users.csv", L"r, ccs=UTF-8");
 
 	userNode* tmp = userList;
-	wchar_t line[300], email[100], phoneNumber[28], address[60];
-	char password[65];
-	int userId;
+	wchar_t line[300], email[100], password[65], phoneNumber[28], address[60];
+	int userId=0;
 
 	// 에러 발생시 종료
 	// (파일이 없는경우 또는 경로가 잘못 지정된 경우)
@@ -95,8 +109,8 @@ userNode* loadUserList() {
 
 	// fp가 NULL을 만나기 전까지 line에 파일 안의 문자열을 받는다.
 	while (fgetws(line, sizeof(line) / sizeof(wchar_t), fp) != NULL) {
-		swscanf(line, L"%d,%ls,%s,%ls,%[^\n]",
-			userId,
+		swscanf(line, L"%d,%[^,],%[^,],%[^,],%[^\n]",
+			&userId,
 			email, 
 			password,
 			phoneNumber,
@@ -134,12 +148,11 @@ void insertUserNode(
 }
 
 bool isEmailExist(const wchar_t* email) {
-
-	for (userNode* tmp = userList; tmp; tmp = tmp->next) {
+	userNode* tmp = userList;
+	for (tmp; tmp; tmp = tmp->next) {
 		if (wcscmp(tmp->email, email) == 0) {
 			return true; // 이메일이 존재함
 		}
-		tmp = tmp->next;
 	}
 	return false; // 이메일이 존재하지 않음
 }
@@ -182,7 +195,127 @@ bool loginUser(const wchar_t* email, const wchar_t* password) {
 	return false;
 }
 
+void showDeleteUser() {
+	system("cls");
+	printf("\n\t\t\t  회원정보 삭제 페이지\n\n");
+	if (user == NULL) {
+		printf("\t\t\t 로그인 후 다시 이용해주시길 바랍니다.");
+		Sleep(1000);
+		return;
+	}
 
-void deleteUser() {}
+	printf("\t\t\t정말로 계정을 삭제하시겠습니까?(y/n)");
+	char confirm;
 
-void updateUser() {}
+	getchar();
+	scanf("%c", &confirm);
+
+	if(confirm == 'y' || confirm == 'Y') {
+		deleteUser(user->userId);
+		printf("\n\n\t\t\t계정이 삭제되었습니다.");
+	}
+	else {
+		printf("\n\n\t\t\t계정 삭제가 취소되었습니다.");
+	}
+	Sleep(2000);
+}
+
+void showUpdateUser() {
+	system("cls");
+	printf("\n\t\t\t  회원정보 수정 페이지\n\n");
+	printf("\t\t\t수정할 정보를 입력하세요.(공백 입력 시 기존 정보로 유지됩니다)\n");
+	wchar_t phoneNumber[28], address[60];
+
+	phoneNumber[0] = L'\0';
+	address[0] = L'\0';
+
+
+	printf("\t\t\t전화번호: ");
+	getchar();
+	fgetws(phoneNumber, sizeof(address) / sizeof(wchar_t), stdin);
+
+	printf("\t\t\t주소: ");
+	getchar();
+	fgetws(address, sizeof(address) / sizeof(wchar_t), stdin);
+	trim(phoneNumber);
+	trim(address);
+	
+	updateUser(phoneNumber, address);
+}
+
+void deleteUser(int userId) {
+	
+	userNode* tmp = userList;
+	userNode* prev = tmp;
+
+	if (tmp->userId == userId) {
+		userList = tmp->next;
+		user = NULL;
+		free(tmp);
+		backupUserList();
+		return;
+	}
+
+	tmp = tmp->next;
+	while(tmp != NULL) {
+		if (tmp->userId == userId) {
+			prev->next = tmp->next;
+			user = NULL;
+			free(tmp);
+			backupUserList();
+			return;
+		}
+
+		prev = tmp;
+		tmp = tmp->next;
+	}
+
+}
+
+void updateUser(const wchar_t* phoneNumber, const wchar_t* address) {
+	// 전화번호와 주소가 공백이 아니면 변경
+	if (phoneNumber[0] != L'\0') {
+		wcscpy(user->phoneNumber, phoneNumber);
+	}
+
+	if (address[0] != L'\0') {
+		wcscpy(user->address, address);
+	}
+
+	// 테이블에 백업
+	backupUserList();
+}
+
+// 이메일로 유저정보를 가져온다.
+userNode* getUserNodeByEmail(const wchar_t* email) {
+	userNode* tmp = userList;
+	for (tmp; tmp; tmp = tmp->next) {
+		if (wcscmp(tmp->email, email) == 0) 
+			return tmp;
+		
+	}
+
+	return NULL;
+}
+
+void showUserList() {
+	system("cls");
+	printf("--------------------회원전체 목록보고---------------------\n\n\n");
+	printf("\t\t\tID, EMAIL, PASSWORD, PHONENUMBER, ADDRESS\n");
+
+	if (userList == NULL) {
+		printf("\t\t\t회원정보가 없습니다.\n");
+	}
+	else {
+		for (userNode* tmp = userList; tmp; tmp = tmp->next) {
+			wprintf(L"\n\t[%-3d]\nEMAIL: %ls\n\tPW: %ls\n\tPHONENUMBER: %ls\n\tADDRESS: %ls\n",
+				tmp->userId,
+				tmp->email,
+				tmp->password,
+				tmp->phoneNumber,
+				tmp->address);
+		}
+	}
+	waitZeroInput();
+}
+

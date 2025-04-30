@@ -41,16 +41,20 @@ void sha256_wchar(const wchar_t* wstr, wchar_t* output) {
     // wchar_t* -> char* 로 변환 (UTF-8로)
     WideCharToMultiByte(CP_UTF8, 0, wstr, -1, mbstr, sizeof(mbstr), NULL, NULL);
 
-    // SHA-256 계산
-    unsigned char hash[SHA256_DIGEST_LENGTH];
-    SHA256_CTX sha256;
-    SHA256_Init(&sha256);
-    SHA256_Update(&sha256, mbstr, strlen(mbstr));
-    SHA256_Final(hash, &sha256);
+    // SHA-256 해시 계산 (EVP 사용)
+    unsigned char hash[EVP_MAX_MD_SIZE];
+    unsigned int hashLen;
+    EVP_MD_CTX* ctx = EVP_MD_CTX_new();
+
+    EVP_DigestInit_ex(ctx, EVP_sha256(), NULL);
+    EVP_DigestUpdate(ctx, mbstr, strlen(mbstr));
+    EVP_DigestFinal_ex(ctx, hash, &hashLen);
+
+    EVP_MD_CTX_free(ctx);
 
     // 계산 결과를 16진수 char* 문자열로 변환
     char hexStr[65];
-    for (int i = 0; i < SHA256_DIGEST_LENGTH; i++) {
+    for (int i = 0; i < hashLen; i++) {
         sprintf(hexStr + (i * 2), "%02x", hash[i]);
     }
     hexStr[64] = '\0';  // 널 종료
@@ -62,7 +66,7 @@ void sha256_wchar(const wchar_t* wstr, wchar_t* output) {
         hexStr,     // 원본 데이터
         -1,         // 변환할 문자열 길이(-1이면 자동 계산)
         wHexStr,    // 결과를 받을 버퍼
-        sizeof(wHexStr) / sizeof(wchar_t), // 버퍼 크기 = 130 / 2 = 65자
+        sizeof(wHexStr) / sizeof(wchar_t) // 버퍼 크기 = 130 / 2 = 65자
     );
 
     wcscpy(output, wHexStr);

@@ -94,7 +94,7 @@ void backupUserList() {
 	FILE* fp;
 
 	// 열고
-	fp = _wfopen(L"user.csv", L"w, ccs=UTF-8");
+	fp = _wfopen(L"users.csv", L"w, ccs=UTF-8");
 	if (fp == NULL) {
 		printf("Error(backupUserList): 파일 오픈 에러\n");
 		return;
@@ -102,7 +102,9 @@ void backupUserList() {
 
 	// 수정하고
 	for (ptr = userList; ptr; ptr = ptr->next) {
-		fwprintf(fp, L"%d,%ls,%ls,%ls,%[^\n]",
+		//%[^\n]는 read용 포맷이라 write에선 의미가 없다(
+		/*fwprintf(fp, L"%d,%ls,%ls,%ls,%[^\n]",*/
+		fwprintf(fp, L"%d,%ls,%ls,%ls,%ls\n",
 			ptr->userId,
 			ptr->email,
 			ptr->password,
@@ -113,7 +115,6 @@ void backupUserList() {
 	// 닫는다
 	fclose(fp);
 	wprintf("\n\n\t\t\tuser 테이블 백업이 성공적으로 수행됐습니다");
-	waitZeroInput();
 }
 
 saleNode* addSales(saleNode* saleToday, orderNode* p) {

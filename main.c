@@ -15,7 +15,7 @@ int main() {
 
 	loadCoffeeMenu();	// 커피 메뉴 읽어오기
 	loadTodaySales();	// 오늘의 매출 읽어오기
-
+	loadUserList();	// 사용자 정보 읽어오기
 	mainMenu();
 }
 

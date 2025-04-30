@@ -2,4 +2,17 @@
 C:\Users\User\Desktop\VisualC++\CoffeeShopManagement\files.c(48,3): warning C4013: 'addOrder'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
 C:\Users\User\Desktop\VisualC++\CoffeeShopManagement\files.c(86,10): warning C4133: '함수': 'char [23]'과(와) 'const wchar_t *const ' 사이의 형식이 호환되지 않습니다.
 C:\Users\User\Desktop\VisualC++\CoffeeShopManagement\files.c(87,10): warning C4133: '함수': 'char [26]'과(와) 'const wchar_t *const ' 사이의 형식이 호환되지 않습니다.
+C:\Users\User\Desktop\VisualC++\CoffeeShopManagement\files.c(117,10): warning C4133: '함수': 'char [48]'과(와) 'const wchar_t *const ' 사이의 형식이 호환되지 않습니다.
+  menu.c
+C:\Users\User\Desktop\VisualC++\CoffeeShopManagement\menu.c(19,4): warning C4013: 'order'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\User\Desktop\VisualC++\CoffeeShopManagement\menu.c(22,4): warning C4013: 'deleteOrder'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\User\Desktop\VisualC++\CoffeeShopManagement\menu.c(31,8): warning C4013: 'addCoffeeMenu'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\User\Desktop\VisualC++\CoffeeShopManagement\menu.c(40,4): warning C4013: 'backup'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+C:\Users\User\Desktop\VisualC++\CoffeeShopManagement\menu.c(48,4): warning C4013: 'showUserList'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+  user.c
+C:\Users\User\Desktop\VisualC++\CoffeeShopManagement\user.c(29,38): warning C4101: 'encryptedPassword' :참조되지 않은 지역 변수입니다.
+C:\Users\User\Desktop\VisualC++\CoffeeShopManagement\user.c(84,11): warning C4013: 'getMaxId'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+  코드를 생성하고 있습니다...
   CoffeeShopManagement.vcxproj -> C:\Users\User\Desktop\VisualC++\CoffeeShopManagement\x64\Debug\CoffeeShopManagement.exe
+  'pwsh.exe'은(는) 내부 또는 외부 명령, 실행할 수 있는 프로그램, 또는
+  배치 파일이 아닙니다.

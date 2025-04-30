@@ -1,0 +1,2 @@
+C:\Users\User\Desktop\VisualC++\CoffeeShopManagement\x64\Debug\libcrypto-3-x64.dll
+C:\Users\User\Desktop\VisualC++\CoffeeShopManagement\CoffeeSh.50eb70b6\x64\Debug\CoffeeSh.C0FC2DD4.Up2Date

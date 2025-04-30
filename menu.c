@@ -41,20 +41,25 @@ void mainMenu() {
 			break;
 		// 회원가입(이메일id,비밀번호,전화번호,주소_스페이스가능)
 		case 9:
+			showSignUp();
 			break;
 		// 회원전체 목록보고
 		case 10:
+			showUserList();
 			break;
 		// 회원정보 수정
 		case 11:
+			showUpdateUser();
 			break;
 
 		// 회원정보 삭제
 		case 12:
+			showDeleteUser();
 			break;
 
 		// 회원 로그인
 		case 13:
+			showLogin();
 			break;
 		
 		case 0:
@@ -80,7 +85,17 @@ void showMainMenu() {
 	printf("\t\t\t 6. 커피 메뉴 추가하기\n\n");
 	printf("\t\t\t 7. 커피 메뉴 삭제하기\n\n");
 	printf("\t\t\t 8. 데이터 저장\n\n");
+	printf("\t\t\t 9. 회원가입\n\n");
+	printf("\t\t\t 10. 회원전체 목록보고\n\n");
+	printf("\t\t\t 11. 회원정보 수정\n\n");
+	printf("\t\t\t 12. 회원정보 삭제\n\n");
+	printf("\t\t\t 13. 회원 로그인\n\n");
 	printf("\t\t\t 0. 끝내기\n\n");
+	if (user) 
+		wprintf(L"\t\t\t현재 사용자: %ls\n\n", user->email);
+	else
+		wprintf(L"\t\t\t현재 사용자: (null)\n\n");
+
 	printf("\t\t\t메뉴를 선택해주세요(1~0): ");
 }
 

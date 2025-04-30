@@ -1,76 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\CoffeeShopManagement\\CoffeeShopManagement\\",
+  "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\VisualC\u002B\u002B\\CoffeeShopManagement\\",
   "Documents": [
-    {
-<<<<<<< HEAD
-      "AbsoluteMoniker": "D:0:0:{50EB70B6-FCF0-43FA-9591-768D2ACE2483}|CoffeeShopManagement.vcxproj|C:\\Users\\User\\Desktop\\VisualC\u002B\u002B\\CoffeeShopManagement\\menu.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{50EB70B6-FCF0-43FA-9591-768D2ACE2483}|CoffeeShopManagement.vcxproj|solutionrelative:menu.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{50EB70B6-FCF0-43FA-9591-768D2ACE2483}|CoffeeShopManagement.vcxproj|C:\\Users\\User\\Desktop\\VisualC\u002B\u002B\\CoffeeShopManagement\\admin.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{50EB70B6-FCF0-43FA-9591-768D2ACE2483}|CoffeeShopManagement.vcxproj|solutionrelative:admin.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-=======
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\Desktop\\CoffeeShopManagement\\CoffeeShopManagement\\menu.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:menu.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\Desktop\\CoffeeShopManagement\\CoffeeShopManagement\\user.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:user.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\Desktop\\CoffeeShopManagement\\CoffeeShopManagement\\admin.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:admin.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\Desktop\\CoffeeShopManagement\\CoffeeShopManagement\\menu.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:menu.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\Desktop\\CoffeeShopManagement\\CoffeeShopManagement\\data.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:data.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\Desktop\\CoffeeShopManagement\\CoffeeShopManagement\\main.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:main.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
->>>>>>> 6c9291f04f027c4291dfbf2582d88b627114c8ef
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\Desktop\\CoffeeShopManagement\\CoffeeShopManagement\\order.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:order.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\Desktop\\CoffeeShopManagement\\CoffeeShopManagement\\files.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:files.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-<<<<<<< HEAD
-      "AbsoluteMoniker": "D:0:0:{50EB70B6-FCF0-43FA-9591-768D2ACE2483}|CoffeeShopManagement.vcxproj|C:\\Users\\User\\Desktop\\VisualC\u002B\u002B\\CoffeeShopManagement\\files.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{50EB70B6-FCF0-43FA-9591-768D2ACE2483}|CoffeeShopManagement.vcxproj|solutionrelative:files.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
     {
       "AbsoluteMoniker": "D:0:0:{50EB70B6-FCF0-43FA-9591-768D2ACE2483}|CoffeeShopManagement.vcxproj|C:\\Users\\User\\Desktop\\VisualC\u002B\u002B\\CoffeeShopManagement\\user.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{50EB70B6-FCF0-43FA-9591-768D2ACE2483}|CoffeeShopManagement.vcxproj|solutionrelative:user.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{50EB70B6-FCF0-43FA-9591-768D2ACE2483}|CoffeeShopManagement.vcxproj|C:\\Users\\User\\Desktop\\VisualC\u002B\u002B\\CoffeeShopManagement\\utils.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{50EB70B6-FCF0-43FA-9591-768D2ACE2483}|CoffeeShopManagement.vcxproj|solutionrelative:utils.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{50EB70B6-FCF0-43FA-9591-768D2ACE2483}|CoffeeShopManagement.vcxproj|C:\\Users\\User\\Desktop\\VisualC\u002B\u002B\\CoffeeShopManagement\\menu.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{50EB70B6-FCF0-43FA-9591-768D2ACE2483}|CoffeeShopManagement.vcxproj|solutionrelative:menu.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{50EB70B6-FCF0-43FA-9591-768D2ACE2483}|CoffeeShopManagement.vcxproj|C:\\Users\\User\\Desktop\\VisualC\u002B\u002B\\CoffeeShopManagement\\order.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{50EB70B6-FCF0-43FA-9591-768D2ACE2483}|CoffeeShopManagement.vcxproj|solutionrelative:order.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{50EB70B6-FCF0-43FA-9591-768D2ACE2483}|CoffeeShopManagement.vcxproj|C:\\Users\\User\\Desktop\\VisualC\u002B\u002B\\CoffeeShopManagement\\files.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{50EB70B6-FCF0-43FA-9591-768D2ACE2483}|CoffeeShopManagement.vcxproj|solutionrelative:files.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{50EB70B6-FCF0-43FA-9591-768D2ACE2483}|CoffeeShopManagement.vcxproj|C:\\Users\\User\\Desktop\\VisualC\u002B\u002B\\CoffeeShopManagement\\main.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{50EB70B6-FCF0-43FA-9591-768D2ACE2483}|CoffeeShopManagement.vcxproj|solutionrelative:main.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{50EB70B6-FCF0-43FA-9591-768D2ACE2483}|CoffeeShopManagement.vcxproj|C:\\Users\\User\\Desktop\\VisualC\u002B\u002B\\CoffeeShopManagement\\menu.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{50EB70B6-FCF0-43FA-9591-768D2ACE2483}|CoffeeShopManagement.vcxproj|solutionrelative:menu.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-=======
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\Desktop\\CoffeeShopManagement\\CoffeeShopManagement\\main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
->>>>>>> 6c9291f04f027c4291dfbf2582d88b627114c8ef
+      "AbsoluteMoniker": "D:0:0:{50EB70B6-FCF0-43FA-9591-768D2ACE2483}|CoffeeShopManagement.vcxproj|C:\\Users\\User\\Desktop\\VisualC\u002B\u002B\\CoffeeShopManagement\\main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{50EB70B6-FCF0-43FA-9591-768D2ACE2483}|CoffeeShopManagement.vcxproj|solutionrelative:main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50EB70B6-FCF0-43FA-9591-768D2ACE2483}|CoffeeShopManagement.vcxproj|C:\\Users\\User\\Desktop\\VisualC\u002B\u002B\\CoffeeShopManagement\\menu.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{50EB70B6-FCF0-43FA-9591-768D2ACE2483}|CoffeeShopManagement.vcxproj|solutionrelative:menu.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50EB70B6-FCF0-43FA-9591-768D2ACE2483}|CoffeeShopManagement.vcxproj|C:\\Users\\User\\Desktop\\VisualC\u002B\u002B\\CoffeeShopManagement\\data.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{50EB70B6-FCF0-43FA-9591-768D2ACE2483}|CoffeeShopManagement.vcxproj|solutionrelative:data.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -79,52 +37,48 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 211,
-          "SelectedChildIndex": 0,
+          "DockedWidth": 293,
+          "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 9,
-=======
-              "DocumentIndex": 0,
->>>>>>> 6c9291f04f027c4291dfbf2582d88b627114c8ef
-              "Title": "menu.c",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\CoffeeShopManagement\\CoffeeShopManagement\\menu.c",
-              "RelativeDocumentMoniker": "menu.c",
-              "ToolTip": "C:\\Users\\user\\Desktop\\CoffeeShopManagement\\CoffeeShopManagement\\menu.c",
-              "RelativeToolTip": "menu.c",
-<<<<<<< HEAD
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAGAAAAAAAAAA==",
-=======
-              "ViewState": "AgIAABsAAAAAAAAAAAAAACEAAAAJAAAAAAAAAA==",
->>>>>>> 6c9291f04f027c4291dfbf2582d88b627114c8ef
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-04-07T10:53:47.187Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "data.h",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\CoffeeShopManagement\\CoffeeShopManagement\\data.h",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\VisualC\u002B\u002B\\CoffeeShopManagement\\data.h",
               "RelativeDocumentMoniker": "data.h",
-              "ToolTip": "C:\\Users\\user\\Desktop\\CoffeeShopManagement\\CoffeeShopManagement\\data.h",
+              "ToolTip": "C:\\Users\\User\\Desktop\\VisualC\u002B\u002B\\CoffeeShopManagement\\data.h",
               "RelativeToolTip": "data.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABYAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-04-07T10:17:47.424Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
+              "Title": "menu.c",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\VisualC\u002B\u002B\\CoffeeShopManagement\\menu.c",
+              "RelativeDocumentMoniker": "menu.c",
+              "ToolTip": "C:\\Users\\User\\Desktop\\VisualC\u002B\u002B\\CoffeeShopManagement\\menu.c",
+              "RelativeToolTip": "menu.c",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAAAGAAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-04-07T10:53:47.187Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "main.h",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\CoffeeShopManagement\\CoffeeShopManagement\\main.h",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\VisualC\u002B\u002B\\CoffeeShopManagement\\main.h",
               "RelativeDocumentMoniker": "main.h",
-              "ToolTip": "C:\\Users\\user\\Desktop\\CoffeeShopManagement\\CoffeeShopManagement\\main.h",
+              "ToolTip": "C:\\Users\\User\\Desktop\\VisualC\u002B\u002B\\CoffeeShopManagement\\main.h",
               "RelativeToolTip": "main.h",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAcwCsAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAACMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-04-07T09:54:30.052Z",
               "EditorCaption": ""
@@ -132,119 +86,38 @@
           ]
         },
         {
-<<<<<<< HEAD
-          "DockedWidth": 248,
-          "SelectedChildIndex": 5,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-=======
-          "DockedWidth": 189,
+          "DockedWidth": 460,
           "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
->>>>>>> 6c9291f04f027c4291dfbf2582d88b627114c8ef
-              "Title": "order.c",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\CoffeeShopManagement\\CoffeeShopManagement\\order.c",
-              "RelativeDocumentMoniker": "order.c",
-              "ToolTip": "C:\\Users\\user\\Desktop\\CoffeeShopManagement\\CoffeeShopManagement\\order.c",
-              "RelativeToolTip": "order.c",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHMAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-04-28T13:21:00.085Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 8,
-              "Title": "main.h",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\VisualC\u002B\u002B\\CoffeeShopManagement\\main.h",
-              "RelativeDocumentMoniker": "main.h",
-              "ToolTip": "C:\\Users\\User\\Desktop\\VisualC\u002B\u002B\\CoffeeShopManagement\\main.h",
-              "RelativeToolTip": "main.h",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-07T09:54:30.052Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-=======
-              "DocumentIndex": 1,
-              "Title": "user.c",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\CoffeeShopManagement\\CoffeeShopManagement\\user.c",
-              "RelativeDocumentMoniker": "user.c",
-              "ToolTip": "C:\\Users\\user\\Desktop\\CoffeeShopManagement\\CoffeeShopManagement\\user.c",
-              "RelativeToolTip": "user.c",
-              "ViewState": "AgIAAE0AAAAAAAAAAAAAALgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-04-28T16:50:58.433Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "menu.txt",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\CoffeeShopManagement\\CoffeeShopManagement\\menu.txt",
-              "RelativeDocumentMoniker": "menu.txt",
-              "ToolTip": "C:\\Users\\user\\Desktop\\CoffeeShopManagement\\CoffeeShopManagement\\menu.txt",
-              "RelativeToolTip": "menu.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-04-28T15:00:38.991Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
->>>>>>> 6c9291f04f027c4291dfbf2582d88b627114c8ef
-              "Title": "admin.c",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\CoffeeShopManagement\\CoffeeShopManagement\\admin.c",
-              "RelativeDocumentMoniker": "admin.c",
-              "ToolTip": "C:\\Users\\user\\Desktop\\CoffeeShopManagement\\CoffeeShopManagement\\admin.c",
-              "RelativeToolTip": "admin.c",
-<<<<<<< HEAD
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwcAAAABAAAAAAAAAA==",
+              "Title": "files.c",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\VisualC\u002B\u002B\\CoffeeShopManagement\\files.c",
+              "RelativeDocumentMoniker": "files.c",
+              "ToolTip": "C:\\Users\\User\\Desktop\\VisualC\u002B\u002B\\CoffeeShopManagement\\files.c",
+              "RelativeToolTip": "files.c",
+              "ViewState": "AgIAAGgAAAAAAAAAAADwv1wAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-04-29T03:02:20.483Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "utils.c",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\VisualC\u002B\u002B\\CoffeeShopManagement\\utils.c",
-              "RelativeDocumentMoniker": "utils.c",
-              "ToolTip": "C:\\Users\\User\\Desktop\\VisualC\u002B\u002B\\CoffeeShopManagement\\utils.c",
-              "RelativeToolTip": "utils.c",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-04-28T18:05:03.804Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "user.c",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\VisualC\u002B\u002B\\CoffeeShopManagement\\user.c",
-              "RelativeDocumentMoniker": "user.c",
-              "ToolTip": "C:\\Users\\User\\Desktop\\VisualC\u002B\u002B\\CoffeeShopManagement\\user.c",
-              "RelativeToolTip": "user.c",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAcwCcAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-04-28T16:50:58.433Z",
+              "WhenOpened": "2025-04-29T23:47:59.335Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "user.c",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\VisualC\u002B\u002B\\CoffeeShopManagement\\user.c",
+              "RelativeDocumentMoniker": "user.c",
+              "ToolTip": "C:\\Users\\User\\Desktop\\VisualC\u002B\u002B\\CoffeeShopManagement\\user.c",
+              "RelativeToolTip": "user.c",
+              "ViewState": "AgIAAAEBAAAAAAAAAADwvwwBAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-04-28T16:50:58.433Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "menu.txt",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\VisualC\u002B\u002B\\CoffeeShopManagement\\menu.txt",
               "RelativeDocumentMoniker": "menu.txt",
@@ -258,63 +131,12 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "files.c",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\VisualC\u002B\u002B\\CoffeeShopManagement\\files.c",
-              "RelativeDocumentMoniker": "files.c",
-              "ToolTip": "C:\\Users\\User\\Desktop\\VisualC\u002B\u002B\\CoffeeShopManagement\\files.c",
-              "RelativeToolTip": "files.c",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAcwFwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-04-07T11:59:31.244Z",
-=======
-              "ViewState": "AgIAADMAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-04-07T11:59:35.362Z",
->>>>>>> 6c9291f04f027c4291dfbf2582d88b627114c8ef
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 3,
-              "Title": "data.h",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\VisualC\u002B\u002B\\CoffeeShopManagement\\data.h",
-              "RelativeDocumentMoniker": "data.h",
-              "ToolTip": "C:\\Users\\User\\Desktop\\VisualC\u002B\u002B\\CoffeeShopManagement\\data.h",
-              "RelativeToolTip": "data.h",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABYAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-07T10:17:47.424Z",
-=======
-              "DocumentIndex": 7,
-              "Title": "files.c",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\CoffeeShopManagement\\CoffeeShopManagement\\files.c",
-              "RelativeDocumentMoniker": "files.c",
-              "ToolTip": "C:\\Users\\user\\Desktop\\CoffeeShopManagement\\CoffeeShopManagement\\files.c",
-              "RelativeToolTip": "files.c",
-              "ViewState": "AgIAAFcAAAAAAAAAAAAcwFUAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-04-07T11:59:31.244Z",
->>>>>>> 6c9291f04f027c4291dfbf2582d88b627114c8ef
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 2,
-=======
-              "DocumentIndex": 8,
->>>>>>> 6c9291f04f027c4291dfbf2582d88b627114c8ef
               "Title": "main.c",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\CoffeeShopManagement\\CoffeeShopManagement\\main.c",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\VisualC\u002B\u002B\\CoffeeShopManagement\\main.c",
               "RelativeDocumentMoniker": "main.c",
-              "ToolTip": "C:\\Users\\user\\Desktop\\CoffeeShopManagement\\CoffeeShopManagement\\main.c",
+              "ToolTip": "C:\\Users\\User\\Desktop\\VisualC\u002B\u002B\\CoffeeShopManagement\\main.c",
               "RelativeToolTip": "main.c",
-<<<<<<< HEAD
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABUAAAAbAAAAAAAAAA==",
-=======
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAPAAAAAAAAAA==",
->>>>>>> 6c9291f04f027c4291dfbf2582d88b627114c8ef
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2025-04-07T09:09:19.071Z",
               "EditorCaption": ""
