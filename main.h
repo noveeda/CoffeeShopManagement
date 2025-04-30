@@ -58,7 +58,7 @@ bool loginUser(const wchar_t* email, const wchar_t* password);
 void deleteUser(int userId);
 void updateUser(const wchar_t* phoneNumber, const wchar_t* address);
 userNode* getUserNodeByEmail(const wchar_t* email);
-
+bool isValidEmail(const wchar_t* email);
 // files.c
 void backupUserList();
 

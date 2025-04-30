@@ -127,7 +127,8 @@ void order() {
 	while (true) {
 		system("cls");
 		printf("\n\t\t\t\t=== (2) 주문 메뉴 ===\n");
-
+		if (user)
+			wprintf(L"\t\t사용자 ID: %d\n", user->userId);
 		showCoffeeMenu();
 		printOrder(thisOrder);
 

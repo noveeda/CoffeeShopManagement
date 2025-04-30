@@ -48,9 +48,17 @@ void showLogin() {
 		}
 		else {
 			printf("\n\n\t\t로그인 실패. 없는 계정입니다.");
+			printf("\n\n\t\t다시 시도하시겠습니까? (y/n): ");
+			char answer;
+			getchar();
+			scanf("%c", &answer);
+			if (answer == 'y' || answer == 'Y') {
+				condition = true;
+			}
+			else {
+				condition = false;
+			}
 		}
-
-		Sleep(500);
 	}
 }
 
@@ -65,19 +73,30 @@ void showSignUp() {
 		printf("\n\n\t\t\t이메일: ");
 		wscanf(L"%ls", email);
 		trim(email); // 앞뒤 공백 제거
-		if (isEmailExist(email)) {
+		if (isEmailExist(email) == true) {
 			printf("\n\n\t\t\t이미 존재하는 이메일입니다.");
-			Sleep(2000);
+			Sleep(1000);
+			continue;
+		}
+
+		if (isValidEmail(email) == false) {
+			printf("\n\n\t\t\t이메일 형식이 올바르지 않습니다.");
+			Sleep(1000);
 			continue;
 		}
 
 		printf("\n\n\t\t\t비밀번호: ");
 		wscanf(L"%ls", password);
+		trim(password);
+
 		printf("\n\n\t\t\t전화번호: ");
 		wscanf(L"%ls", phoneNumber);
+		trim(phoneNumber);
+
 		printf("\n\n\t\t\t주소: ");
-		getchar();
+		getchar(); // 버퍼 비움
 		fgetws(address, 60, stdin); // 공백을 포함한 주소 입력
+		trim(address);
 		break;
 	}
 	// userId는 AUTO_INCREMENT로 설정
@@ -301,14 +320,14 @@ userNode* getUserNodeByEmail(const wchar_t* email) {
 void showUserList() {
 	system("cls");
 	printf("--------------------회원전체 목록보고---------------------\n\n\n");
-	printf("\t\t\tID, EMAIL, PASSWORD, PHONENUMBER, ADDRESS\n");
+	//printf("\t\t\tID, EMAIL, PASSWORD, PHONENUMBER, ADDRESS\n");
 
 	if (userList == NULL) {
 		printf("\t\t\t회원정보가 없습니다.\n");
 	}
 	else {
 		for (userNode* tmp = userList; tmp; tmp = tmp->next) {
-			wprintf(L"\n\t[%-3d]\nEMAIL: %ls\n\tPW: %ls\n\tPHONENUMBER: %ls\n\tADDRESS: %ls\n",
+			wprintf(L"\n\t[%-3d]\n\tEMAIL: %ls\n\tPASSWORD: %ls\n\tPHONENUMBER: %ls\n\tADDRESS: %ls\n",
 				tmp->userId,
 				tmp->email,
 				tmp->password,
@@ -319,3 +338,10 @@ void showUserList() {
 	waitZeroInput();
 }
 
+bool isValidEmail(const wchar_t* email) {
+
+	const wchar_t* at = wcschr(email, L'@');
+	const wchar_t* dot = wcschr(email, L'.');
+	// 이메일 형식이 맞는지 검사
+	return (at && dot && at < dot && at > email && dot[1] != '\0');
+}
